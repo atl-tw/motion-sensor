@@ -52,5 +52,5 @@ Now browse to the app at `http://localhost:8000/app/index.html`.
 
 ### Clone angular-seed
 
-This project is a clone of: https://github.com/angular/angular-seed.git
+This project is a clone of [angular-seed](https://github.com/angular/angular-seed.git)
 Check out the commit history of this README, or visit the angular-seed repo for more details.
