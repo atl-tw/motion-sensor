@@ -11,11 +11,17 @@ angular.module('myApp.view2', ['ngRoute'])
 
 .controller('View2Ctrl', ['$scope', function($scope) {
   var client;
-
   var mqttServer = 'askKianaforServerName.us';
 
+  $scope.rawMessageData = [];
+
+//  $scope.$watch('rawMessageData', function(newValue, oldValue){
+//    console.log('old value: ' + oldValue + " || new value: " + newValue);
+//    if (newValue != oldValue) {
+//    }
+//  }, true);
+
   function connectMqttClient() {
-    console.log("connecting mqtt client");
     client = new Paho.MQTT.Client(mqttServer, 8080, 'clientId');
     client.onConnectionLost = onConnectionLost;
     client.onMessageArrived = onMessageArrived;
@@ -24,11 +30,13 @@ angular.module('myApp.view2', ['ngRoute'])
   };
 
   function onConnect() {
-    console.log("onConnect");
     client.subscribe("topic");
-    var message = new Paho.MQTT.Message("webapp onConnect");
-    message.destinationName = "topic";
-    client.send(message);
+  }
+
+  function publishMessage(message) {
+    var mqttMessage = new Paho.MQTT.Message(message);
+    mqttMessage.destinationName = "topic";
+    client.send(mqttMessage);
   }
 
   function onConnectionLost(responseObject) {
@@ -39,6 +47,8 @@ angular.module('myApp.view2', ['ngRoute'])
 
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
+    $scope.rawMessageData.push(message.payloadString);
+    $scope.$apply();
   }
 
   connectMqttClient();
