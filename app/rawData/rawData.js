@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+angular.module('myApp.rawData', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
+  $routeProvider.when('/rawData', {
+    templateUrl: 'rawData/rawData.html',
+    controller: 'RawDataCtrl'
   });
 }])
 
-.controller('View2Ctrl', ['$scope', function($scope) {
+.controller('RawDataCtrl', ['$scope', function($scope) {
   var client;
   var mqttServer = 'askKianaforServerName.us';
 
