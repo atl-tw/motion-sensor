@@ -9,6 +9,12 @@ angular.module('myApp.heatMap', ['ngRoute'])
   });
 }])
 
-.controller('HeatMapCtrl', [function() {
+.controller('HeatMapCtrl', ['$scope', 'QueueReader', function($scope, QueueReader) {
+
+  function callback(message) {
+    //    turn sensors red/green/blue here
+  }
+
+  QueueReader.connectMqttClient(callback);
 
 }]);

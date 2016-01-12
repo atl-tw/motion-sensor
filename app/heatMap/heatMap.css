@@ -1,0 +1,40 @@
+.office-layout {
+    position: relative;
+    width:  980px;
+    height: 1320px;
+    background: url(resources/office_layout.png) no-repeat;
+}
+
+.censor-attributes {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+}
+
+.censor1 {
+    left: 930px;
+    top: 0px;
+}
+
+.censor2 {
+    left: 600px;
+    top: 420px;
+}
+
+.censor3 {
+    left: 957px;
+    top: 420px;
+}
+
+.active-sensor {
+    background: url(resources/record_green.png);
+}
+
+.inactive-sensor {
+    background: url(resources/record_red.png);
+}
+
+.offline-sensor {
+    background: url(resources/record_blue.png);
+}
+

@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.heatMap',
   'myApp.rawData',
+  'myApp.QueueReader',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
