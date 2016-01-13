@@ -7,34 +7,35 @@
 
 .censor-attributes {
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 130px;
+    height: 140px;
+    transform: scale(0.3);
 }
 
 .censor1 {
-    left: 930px;
-    top: 0px;
+    left: 860px;
+    top: -51px;
 }
 
 .censor2 {
-    left: 600px;
-    top: 420px;
+    left: 550px;
+    top: 356px;
 }
 
 .censor3 {
-    left: 957px;
-    top: 420px;
+    left: 893px;
+    top: 356px;
 }
 
 .active-sensor {
-    background: url(resources/record_green.png);
+    background: url(resources/green_sensor.png);
 }
 
 .inactive-sensor {
-    background: url(resources/record_red.png);
+    background: url(resources/red_sensor.png);
 }
 
 .offline-sensor {
-    background: url(resources/record_blue.png);
+    background: url(resources/gray_sensor.png);
 }
 

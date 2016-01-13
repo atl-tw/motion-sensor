@@ -14,11 +14,10 @@ angular.module('myApp.rawData', ['ngRoute'])
   $scope.rawMessageData = [];
 
   function callback(message) {
-      console.log("onMessageArrived:"+message.payloadString);
       $scope.rawMessageData.push(message.payloadString);
       $scope.$apply();
   }
 
-  QueueReader.connectMqttClient(callback);
+  QueueReader.connectMqttClient('rawDataClient', callback);
 
 }]);
