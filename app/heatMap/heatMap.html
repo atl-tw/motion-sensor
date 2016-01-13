@@ -1,5 +1,3 @@
 <div class="office-layout">
-    <div class="censor1 censor-attributes offline-sensor"></div>
-    <div class="censor2 censor-attributes offline-sensor"></div>
-    <div class="censor3 censor-attributes offline-sensor"></div>
+    <div ng-repeat="sensor in sensors" class="{{sensorStyle(sensor.client)}}"></div>
 </div>

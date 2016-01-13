@@ -5,26 +5,21 @@
     background: url(resources/office_layout.png) no-repeat;
 }
 
-.censor-attributes {
+.sensor-attributes {
     position: absolute;
     width: 130px;
     height: 140px;
     transform: scale(0.3);
 }
 
-.censor1 {
-    left: 860px;
-    top: -51px;
+.sensor1 {
+    left: 630px;
+    top: 500px;
 }
 
-.censor2 {
+.sensor2 {
     left: 550px;
-    top: 356px;
-}
-
-.censor3 {
-    left: 893px;
-    top: 356px;
+    top: 787px;
 }
 
 .active-sensor {
