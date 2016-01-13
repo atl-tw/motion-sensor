@@ -5,20 +5,20 @@
 describe('my app', function() {
 
 
-  it('should automatically redirect to /heatMap when location hash/fragment is empty', function() {
+  it('should automatically redirect to /motionDetection when location hash/fragment is empty', function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/heatMap");
+    expect(browser.getLocationAbsUrl()).toMatch("/motionDetection");
   });
 
 
-  describe('heatMap', function() {
+  describe('motionDetection', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/heatMap');
+      browser.get('index.html#/motionDetection');
     });
 
 
-    it('should render heatMap when user navigates to /heatMap', function() {
+    it('should render motionDetection when user navigates to /motionDetection', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
         toMatch(/partial for view 1/);
     });

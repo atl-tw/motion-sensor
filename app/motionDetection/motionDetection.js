@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.heatMap', ['ngRoute'])
+angular.module('myApp.motionDetection', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/heatMap', {
-    templateUrl: 'heatMap/heatMap.html',
-    controller: 'HeatMapCtrl'
+  $routeProvider.when('/motionDetection', {
+    templateUrl: 'motionDetection/motionDetection.html',
+    controller: 'MotionDetectionCtrl'
   });
 }])
 
-.controller('HeatMapCtrl', ['$scope', 'QueueReader', function($scope, QueueReader) {
+.controller('MotionDetectionCtrl', ['$scope', 'QueueReader', function($scope, QueueReader) {
 
    $scope.sensors = {"esp8266-5c:cf:7f:7:46:7": {"name": "sensor1", "client": "esp8266-5c:cf:7f:7:46:7", "status": "offline-sensor"},
                   "esp8266-5c:cf:7f:7:46:26": {"name": "sensor2", "client": "esp8266-5c:cf:7f:7:46:26", "status": "offline-sensor"}};
@@ -36,6 +36,6 @@ angular.module('myApp.heatMap', ['ngRoute'])
     return JSON.parse(message.payloadString);
   }
 
-  QueueReader.connectMqttClient('heatMapClient', callback);
+  QueueReader.connectMqttClient('motionDetectionClient', callback);
 
 }]);

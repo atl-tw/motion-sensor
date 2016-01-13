@@ -5,7 +5,7 @@ angular.module('myApp.QueueReader', [])
     var queueReader = {};
     var client;
 
-    var mqttServer = 'askKianaforServerName.us';
+    var mqttServer = 'askKianaforServerName.om';
 
   queueReader.connectMqttClient = function(clientId, callback){
     client = new Paho.MQTT.Client(mqttServer, 8080, clientId);
