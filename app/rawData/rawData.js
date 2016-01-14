@@ -18,6 +18,6 @@ angular.module('myApp.rawData', ['ngRoute'])
       $scope.$apply();
   }
 
-  QueueReader.connectMqttClient('rawDataClient', callback);
+  QueueReader.connectMqttClient('rawDataClient-'+UUID.generate(), callback);
 
 }]);

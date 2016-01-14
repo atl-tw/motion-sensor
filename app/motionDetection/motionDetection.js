@@ -38,6 +38,6 @@ angular.module('myApp.motionDetection', ['ngRoute'])
     return JSON.parse(message.payloadString);
   }
 
-  QueueReader.connectMqttClient('motionDetectionClient', callback);
+  QueueReader.connectMqttClient('motionDetectionClient-'+UUID.generate(), callback);
 
 }]);
