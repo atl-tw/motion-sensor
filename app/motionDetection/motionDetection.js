@@ -11,12 +11,14 @@ angular.module('myApp.motionDetection', ['ngRoute'])
 
 .controller('MotionDetectionCtrl', ['$scope', 'QueueReader', function($scope, QueueReader) {
 
-   $scope.sensors = {"esp8266-5c:cf:7f:7:46:7": {"name": "sensor1", "client": "esp8266-5c:cf:7f:7:46:7", "status": "offline-sensor"},
-                  "esp8266-5c:cf:7f:7:46:26": {"name": "sensor2", "client": "esp8266-5c:cf:7f:7:46:26", "status": "offline-sensor"}};
+   $scope.sensors = {"esp8266-5c:cf:7f:7:46:26": {"name": "kitchen", "client": "esp8266-5c:cf:7f:7:46:26", "status": "inactive"},
+                    "esp8266-5c:cf:7f:7:8f:21": {"name": "conference", "client": "esp8266-5c:cf:7f:7:8f:21", "status": "inactive"},
+                    "esp8266-5c:cf:7f:6:cf:ea": {"name": "front-office", "client": "esp8266-5c:cf:7f:6:cf:ea", "status": "inactive"},
+                    "esp8266-5c:cf:7f:7:46:7": {"name": "collaboration", "client": "esp8266-5c:cf:7f:7:46:7", "status": "inactive"}};
 
-   $scope.sensorStyle = function(sensorName) {
-      var sensor = $scope.sensors[sensorName];
-      return sensor.name + " sensor-attributes " + sensor.status;
+   $scope.sensorStyle = function(client) {
+      var sensor = $scope.sensors[client];
+      return sensor.status + "-" + sensor.name;
    }
 
   function callback(message) {
@@ -24,9 +26,9 @@ angular.module('myApp.motionDetection', ['ngRoute'])
     var sensor = $scope.sensors[json.client];
 
     if (angular.isDefined(json["new-motion"])) {
-      sensor.status = "active-sensor";
+      sensor.status = "active";
     } else if (angular.isDefined(json["end-motion"])) {
-      sensor.status = "inactive-sensor";
+      sensor.status = "inactive";
     }
 
     $scope.$apply();
