@@ -17,7 +17,7 @@ angular.module('myApp.QueueReader', [])
 
   queueReader.publishMessage = function(message) {
     var mqttMessage = new Paho.MQTT.Message(message);
-    mqttMessage.destinationName = "topic";
+    mqttMessage.destinationName = "motion";
     client.send(mqttMessage);
   }
 
