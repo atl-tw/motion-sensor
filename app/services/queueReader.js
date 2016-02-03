@@ -15,14 +15,8 @@ angular.module('myApp.QueueReader', [])
     client.connect({onSuccess:onConnect});
   };
 
-  queueReader.publishMessage = function(message) {
-    var mqttMessage = new Paho.MQTT.Message(message);
-    mqttMessage.destinationName = "motion";
-    client.send(mqttMessage);
-  }
-
   function onConnect(){
-    client.subscribe("topic");
+    client.subscribe("motion");
   }
 
   function onConnectionLost(responseObject) {
