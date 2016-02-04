@@ -16,7 +16,7 @@ angular.module('myApp.QueueReader', [])
   };
 
   function onConnect(){
-    client.subscribe("motion");
+    client.subscribe("/motion");
   }
 
   function onConnectionLost(responseObject) {

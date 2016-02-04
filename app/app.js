@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.motionDetection',
   'myApp.rawData',
+  'myApp.historicalData',
   'myApp.QueueReader',
   'myApp.version'
 ]).
