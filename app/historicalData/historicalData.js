@@ -9,6 +9,12 @@ angular.module('myApp.historicalData', ['ngRoute'])
   });
 }])
 
-.controller('HistoricalDataCtrl', ['$scope', function($scope) {
+.controller('HistoricalDataCtrl', ['$scope', 'HistoricalDataService', function($scope, HistoricalDataService) {
+  $scope.rawData = {};
+
+//  $scope.sensorNames = HistoricalDataService.getSensorNames;
+  HistoricalDataService.getRawData().then(function(response) {
+    $scope.rawData = response.data;
+  });
 
 }]);

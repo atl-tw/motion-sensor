@@ -6,6 +6,7 @@ angular.module('myApp', [
   'myApp.motionDetection',
   'myApp.rawData',
   'myApp.historicalData',
+  'myApp.HistoricalDataService',
   'myApp.QueueReader',
   'myApp.version'
 ]).
