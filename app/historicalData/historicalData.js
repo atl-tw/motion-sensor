@@ -9,12 +9,11 @@ angular.module('myApp.historicalData', ['ngRoute'])
   });
 }])
 
-.controller('HistoricalDataCtrl', ['$scope', 'HistoricalDataService', function($scope, HistoricalDataService) {
-  $scope.rawData = {};
+.controller('HistoricalDataCtrl', ['$scope', 'HistoricalDataService', '$sce', function($scope, HistoricalDataService, $sce) {
 
 //  $scope.sensorNames = HistoricalDataService.getSensorNames;
   HistoricalDataService.getRawData().then(function(response) {
-    $scope.rawData = response.data;
+    $scope.trustedRawData = $sce.trustAsHtml(response.data);
   });
 
 }]);
