@@ -18,7 +18,7 @@ angular.module('myApp.MotionSensorDataService', [])
     };
 
     service.getDataForDate = function(date) {
-        return $http.get('http://localhost:4666/rawdata/date/' + date);
+        return $http.get('http://atliot.com:4666/rawdata/date/' + date);
     };
 
     return service;

@@ -36,7 +36,6 @@ angular.module('myApp.timeline', ['ngRoute'])
 
         /////////////////////////////////////// EVENTS
         $scope.onRangeChange = function (period) {
-            console.log("Range changing", period);
             function splitDate(date) {
                 var m = moment(date);
                 return {
@@ -99,9 +98,9 @@ angular.module('myApp.timeline', ['ngRoute'])
                         }
 
                         $scope.timelineTimeline =
+                            p.s.day.name + ' ' + p.s.day.number + ' ' + p.s.month.name + ' ' + p.s.year + ', ' +
                             p.s.hour + ':' + p.s.minute + '  -  ' +
-                            p.e.hour + ':' + p.e.minute + ' ' +
-                            p.s.day.name + ' ' + p.s.day.number + ' ' + p.s.month.name + ' ' + p.s.year;
+                            p.e.hour + ':' + p.e.minute;
                     }
                 }
             }
@@ -120,11 +119,9 @@ angular.module('myApp.timeline', ['ngRoute'])
         };
 
         $scope.onRangeChanged = function (period) {
-            console.log("Range changed", period);
         };
 
        $scope.onLoaded = function (graphRef) {
-            console.log("timeline loaded callback", graphRef);
             graph2d = graphRef;
             graph2d.setWindow($scope.startTime, $scope.stopTime);
         };
@@ -138,7 +135,8 @@ angular.module('myApp.timeline', ['ngRoute'])
     MotionSensorDataService.getSensorNames().then(function(response){
         loadGroups(response.data);
 
-        MotionSensorDataService.getDataForDate('02-04-2016').then(function(response){
+        var todaysDate = moment().format('MM-DD-YYYY');
+        MotionSensorDataService.getDataForDate(todaysDate).then(function(response){
             loadData(response.data.values);
 
             $scope.graphData = {
