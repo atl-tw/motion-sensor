@@ -11,9 +11,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-grid/ui-grid.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/vis/dist/vis.css">
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" type="text/css" href="motionDetection/motionDetection.css">
+  <link rel="stylesheet" type="text/css" href="timeline/timeline.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
@@ -21,6 +24,7 @@
     <li><a href="#/motionDetection">Motion Detection</a></li>
     <li><a href="#/rawData">Raw Data</a></li>
     <li><a href="#/historicalData">Historical Data</a></li>
+    <li><a href="#/timeline">Timeline</a></li>
   </ul>
 
   <!--[if lt IE 7]>
@@ -33,15 +37,20 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="bower_components/paho-mqtt/src/mqttws31.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
   <script src="bower_components/simple-uuid/uuid.js"></script>
+  <script src="bower_components/vis/dist/vis.js"></script>
+  <script src="bower_components/angular-visjs/angular-vis.js"></script>
+  <!--<script src="https://www.gstatic.com/charts/loader.js"></script>-->
   <script src="app.js"></script>
   <script src="motionDetection/motionDetection.js"></script>
   <script src="rawData/rawData.js"></script>
   <script src="historicalData/historicalData.js"></script>
-  <script src="historicalData/historicalDataService.js"></script>
+  <script src="timeline/timeline.js"></script>
+  <script src="services/motionSensorDataService.js"></script>
   <script src="services/queueReader.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
