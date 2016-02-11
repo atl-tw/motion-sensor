@@ -9,10 +9,9 @@ angular.module('myApp.historicalData', ['ngRoute'])
   });
 }])
 
-.controller('HistoricalDataCtrl', ['$scope', 'HistoricalDataService', '$sce', function($scope, HistoricalDataService, $sce) {
+.controller('HistoricalDataCtrl', ['$scope', 'MotionSensorDataService', '$sce', function($scope, MotionSensorDataService, $sce) {
 
-//  $scope.sensorNames = HistoricalDataService.getSensorNames;
-  HistoricalDataService.getRawData().then(function(response) {
+  MotionSensorDataService.getRawData().then(function(response) {
     $scope.trustedRawData = $sce.trustAsHtml(response.data);
   });
 
